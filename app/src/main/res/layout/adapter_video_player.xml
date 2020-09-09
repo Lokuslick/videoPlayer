@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="videoModel"
+            type="com.android.videoplayer.model.VideoModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/mPlayerView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:player_layout_id="@layout/exo_simple_player_view"
+        app:repeat_toggle_modes="none"
+        app:show_timeout="45000"
+        app:surface_type="texture_view"/>
+
+    <CheckBox
+        android:id="@+id/cbFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:buttonTint="@color/white"
+        android:checked="@{videoModel.bookMarked}"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Bookmark"
+        android:textColor="@color/white"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
